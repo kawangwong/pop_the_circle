@@ -34,8 +34,8 @@ clock = pygame.time.Clock()
 group = pygame.sprite.Group([
     SpriteObject(randint(0,circle_location_x), randint(0,circle_location_y), (128, 0, 0)),
     SpriteObject(randint(0,circle_location_x), randint(0,circle_location_y), (0, 128, 0)),
-    SpriteObject(window.get_width() // 3, window.get_height() * 2 // 3, (0, 0, 128)),
-    SpriteObject(window.get_width() * 2// 3, window.get_height() * 2 // 3, (128, 128, 0)),
+    SpriteObject(randint(0,circle_location_x), randint(0,circle_location_y), (0, 0, 128)),
+    SpriteObject(randint(0,circle_location_x), randint(0,circle_location_y), (128, 128, 0)),
 ])
 
 run = True
