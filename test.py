@@ -14,16 +14,17 @@ class SpriteObject(pygame.sprite.Sprite):
         pygame.draw.circle(self.original_image, color, (25, 25), 25)
         self.click_image = pygame.Surface((50, 50), pygame.SRCALPHA)
         pygame.draw.circle(self.click_image, color, (25, 25), 25)
-        pygame.draw.circle(self.click_image, (255, 255, 255), (25, 25), 25, 4)
+        pygame.draw.circle(self.click_image, (255, 255, 255), (25, 25), 25, 4) ##, last arguement highlights
         self.image = self.original_image 
         self.rect = self.image.get_rect(center = (x, y))
-        self.clicked = False
+        self.clicked = False ##This set false to unhighlight
 
     def update(self, event_list):
         for event in event_list:
             if event.type == pygame.MOUSEBUTTONDOWN:
+                pass
                 if self.rect.collidepoint(event.pos):
-                    self.clicked = not self.clicked 
+                    self.clicked = not self.clicked
         
         self.image = self.click_image if self.clicked else self.original_image
 
@@ -42,10 +43,14 @@ run = True
 while run:
     clock.tick(60)
     event_list = pygame.event.get()
+    
+    
     for event in event_list:
         if event.type == pygame.QUIT:
             run = False 
-
+    ##for quiting game
+    
+    
     group.update(event_list)
 
     window.fill(0)
